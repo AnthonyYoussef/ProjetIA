@@ -38,4 +38,4 @@ Thumbs.db
 
 test.csv
 training.cvs
-
+*.json
