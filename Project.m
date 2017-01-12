@@ -36,6 +36,7 @@ for k=1:size(res,1)
         correctPredictions = correctPredictions+1;
     end
 end
+
 fprintf('---------- LM algorithm ----------');
 fprintf('Number of instances correctyl classified : %d\n',correctPredictions);
 fprintf('Percentage of instances correctly classified : %d\n',correctPredictions/size(res,1)*100);
@@ -58,6 +59,7 @@ for k=1:size(res,1)
         correctPredictions = correctPredictions+1;
     end
 end
+
 fprintf('---------- Bayesian regularization algorithm ----------');
 fprintf('Number of instances correctyl classified : %d\n',correctPredictions);
 fprintf('Percentage of instances correctly classified : %d\n',correctPredictions/size(res,1)*100);
