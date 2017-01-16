@@ -56,6 +56,22 @@ function UseNeuralNetwork(fileName,nbCouches,algo,nbEpochs,repartition)
     correctPredictions = 0;
     correctWeight = 0;
     
+    %%% FAIRE CALCUL RAPPEL ET PRECISION
+% Calcul des Vrais positifs / Faux positifs / Vrais négatifs / Faux
+% négatifs
+VP = 0; FP = 0; VN = 0; FN = 0;
+for k=1:size(res,1)
+    if(res(k,2)== 1 && output(k,2)== 1)
+        VP = VP+1;
+    elseif (res(k,2)== 1 && output(k,2)== 0)
+        FP = FP+1;
+    elseif (res(k,2)== 0 && output(k,2)== 0)
+        VN = VN+1;
+    elseif (res(k,2)== 0 && output(k,2)== 1)
+        FN = FN+1;
+    end
+end
+    
 
     %Compare real output values to neural network results
     for k=1:size(output,1)
@@ -72,6 +88,15 @@ function UseNeuralNetwork(fileName,nbCouches,algo,nbEpochs,repartition)
     fprintf('Percentage of weight correctly classified : %d\n',correctWeight/size(output,1)*100);
     fprintf('Number of instances correctly classified (+/- 0.5): %d\n',correctPredictions);
     fprintf('Percentage of instances correctly classified : %d\n',correctPredictions/size(output,1)*100);
+    
+    % Précision
+precision = 100*VP/(VP+FP);
+% Rappel 
+rappel = 100*VP/(VP+FN);
+%fprintf('VP : %d\n',VP);
+%fprintf('FP : %d\n',FP);
+fprintf('Precision en pourcentage : %d\n',precision);
+fprintf('Rappel en pourcentage : %d\n',rappel);
 
     % Plots
 %     figure, plotperform(tr)
