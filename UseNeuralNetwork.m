@@ -1,14 +1,13 @@
 function UseNeuralNetwork(fileName,folder,nbCouches,algo,nbEpochs,repartition)
     filePath = strcat(folder,fileName);
     data = csvread(filePath,1,0);
-    disp(filePath);
     
-    %Attributs d'entrée
-    input = data(:,1:25);
+    %On ne garde que les colonnes qui nous intéressent
+    input = data(:,[2:16 18:19 21 23:26 28:29 31]);
     
     %Attributs à prédire
-    W = data(:,26);
-    T = data(:,27);
+    W = data(:,32);
+    T = data(:,33);
       
     target = [W T];
 

@@ -40,12 +40,12 @@ COLNAMES = [
 ]
 
 here = os.path.dirname(os.path.realpath(__file__))
-filename = here + "/Data/DeleteEntriesFromUnpredictableColums/"
+filename = here + "/Data/"
 os.makedirs(os.path.dirname(filename), exist_ok=True)
 
-csvfile = open("Données_Intactes.csv", 'r', encoding="utf-8")
-outputfile = open(filename +"DeleteEntriesFromUnpredictableColums.csv",'w',encoding="utf-8", newline='')
-equilibratedOutput = open(filename +"EquilibratedDeleteEntriesFromUnpredictableColums.csv",'w',encoding="utf-8", newline='')
+csvfile = open("training.csv", 'r', encoding="utf-8")
+outputfile = open(filename +"TrainingSet.csv",'w',encoding="utf-8", newline='')
+equilibratedOutput = open(filename +"EquilibratedTrainingSet.csv",'w',encoding="utf-8", newline='')
 
 badRowCounter = 0 #number of deleted rows
 RowNumber = 0     #Total row (minus header)
@@ -69,7 +69,7 @@ try:
         RowNumber+=1
         mustprint = True
         for i in row :
-            if ((row[COLNAMES[17]] in (None, "", "?")) or (row[COLNAMES[19]] in (None, "", "?")) or (row[COLNAMES[21]] in (None, "", "?")) or (row[COLNAMES[26]] in (None, "", "?")) or (row[COLNAMES[29]] in (None, "", "?")) ):
+            if ((row[COLNAMES[17]] in (None, "", "-999.0")) or (row[COLNAMES[19]] in (None, "", "-999.0")) or (row[COLNAMES[21]] in (None, "", "-999.0")) or (row[COLNAMES[26]] in (None, "", "-999.0")) or (row[COLNAMES[29]] in (None, "", "-999.0")) ):
                 badRowCounter+=1
                 print ("bad row detected")
                 mustprint = False

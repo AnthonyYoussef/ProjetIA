@@ -38,7 +38,7 @@ COLNAMES = [
 ]
 
 here = os.path.dirname(os.path.realpath(__file__))
-filename = here + "/TestData/DeletePriJetNumInf1Entries/"
+filename = here + "/TestData/"
 os.makedirs(os.path.dirname(filename), exist_ok=True)
 
 csvfile = open("test.csv", 'r', encoding="utf-8")

@@ -40,10 +40,10 @@ COLNAMES = [
 ]
 
 here = os.path.dirname(os.path.realpath(__file__))
-filename = here + "/Data/DeletePriJetNumInf1Entries/"
+filename = here + "/Data/"
 os.makedirs(os.path.dirname(filename), exist_ok=True)
 
-csvfile = open("Données_Intactes.csv", 'r', encoding="utf-8")
+csvfile = open("training.csv", 'r', encoding="utf-8")
 outputfile = open(filename +"DeletePriJetNumInf1Entries.csv",'w',encoding="utf-8", newline='')
 equilibratedOutput = open(filename +"EquilibratedDeletePriJetNumInf1Entries.csv",'w',encoding="utf-8", newline='')
 
