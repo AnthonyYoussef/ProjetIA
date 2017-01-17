@@ -182,7 +182,7 @@ function valider(obj,event)
             algo = 'trainscg';
     end
     
-    UseNeuralNetwork(strcat(folder,fileName),nbCouches,algo,nbEpochs,repartition);
+    UseNeuralNetwork(fileName,folder,nbCouches,algo,nbEpochs,repartition);
 
 end
 
