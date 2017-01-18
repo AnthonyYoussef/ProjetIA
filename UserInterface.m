@@ -73,7 +73,7 @@ function app
 
     setappdata(0,'test',test);
     setappdata(0,'folder','Data\');
-    setappdata(0,'fileName','SignificantCleanNormalizedEquilibratedEntries.csv');
+    setappdata(0,'fileName','TrainingSet.csv');
     
     uicontrol('Style', 'pushbutton', 'String', 'Load data',...
         'Position', [30 75 120 40],...
@@ -139,7 +139,7 @@ function valider(obj,event)
     %Vérification des valeurs saisies pour les différents paramètres 
     if isempty(nbCouches.String) || ~isinteger(nbCouches.String)
         if(str2num(nbCouches.String)<=0)
-            waitfor(msgbox('Le nombre de couches cachées doit être un nombre positif (valeur par défaut = 10) )'));
+            waitfor(msgbox('Le nombre de couches cachées doit être un nombre positif (valeur par défaut = 8) )'));
             nbCouches = 10;
         else
             nbCouches = str2num(nbCouches.String);
@@ -148,8 +148,8 @@ function valider(obj,event)
 
     if isempty(nbEpochs.String) || ~isinteger(nbEpochs.String)
         if(str2num(nbEpochs.String)<=0)
-            waitfor(msgbox('Le nombre d''itérations doit être un nombre positif (valeur par défaut = 50) )'));
-            nbEpochs = 50;
+            waitfor(msgbox('Le nombre d''itérations doit être un nombre positif (valeur par défaut = 26) )'));
+            nbEpochs = 26;
         else
             nbEpochs = str2num(nbEpochs.String);
         end

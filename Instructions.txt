@@ -1,0 +1,4 @@
+Si vous voulez utiliser l'outil : 
+	- Copier le fichier training.csv dans le dossier
+	- Lancer le script python de prétraitement'py Pretraitement.csv' -> 2 fichiers générés dans le sous-dossier 'Data'
+	- Lancer le script Matlab 'UserInterface.m'
